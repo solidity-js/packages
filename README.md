@@ -1,2 +1,3 @@
-# packages
-Common solidity ABIs and contract addresses packaged up as JavaScript modules
+# SolidityJS Packages
+
+SolidityJS packages up common solidity ABIs and contract addresses. It then publishes each one as an NPM package.

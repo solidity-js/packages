@@ -51,7 +51,7 @@ export const compile = async (
 
   const packageVersion = "1.0.0"; // TODO
 
-  compileTemplate(packageName, "contract.js", { contracts });
+  compileTemplate(packageName, "index.js", { contracts });
   compileTemplate(packageName, "package.json", { packageName, packageVersion });
 };
 

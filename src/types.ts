@@ -26,7 +26,7 @@ export type Contract = {
   abi: string;
 };
 
-export type TemplateName = "contract.js" | "package.json";
+export type TemplateName = "index.js" | "package.json";
 
 export type Settings = {
   sourcesEnabled: {

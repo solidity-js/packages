@@ -1,0 +1,18 @@
+{
+  "name": "@solidity-js/compound",
+  "description": "Smart contract ABIs for compound contracts",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "author": "SolidityJS <https://github.com/solidity-js>",
+  "license": "MIT",
+  "keywords": [
+    "solidity",
+    "abi",
+    "smart contract",
+    "compound"
+  ],
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}

@@ -18,6 +18,8 @@ export type PackageConfig = {
       source: PackageABISource;
     };
   };
+  projectName: string;
+  projectUrl: string;
 };
 
 export type Contract = {
@@ -26,7 +28,7 @@ export type Contract = {
   abi: string;
 };
 
-export type TemplateName = "index.js" | "package.json";
+export type TemplateName = "index.js" | "package.json" | "README.md";
 
 export type Settings = {
   verbose: boolean;

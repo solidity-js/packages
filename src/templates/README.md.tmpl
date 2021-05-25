@@ -1,0 +1,36 @@
+# @solidity-js/{{ packageName }}
+
+Smart contract ABIs for [{{ projectName }}]({{ projectUrl }}), packaged by [SolidityJS](https://github.com/solidity-js).
+
+## Usage
+
+**Always remember to install a _specific_ package version.**
+
+    $ npm install @solidity-js/{{ packageName }}@{{ packageVersion }}
+
+    // or
+
+    $ yarn add @solidity-js/{{ packageName }}@{{ packageVersion }}
+
+Load in JS/TS:
+
+    import { ContractName } from "@solidity-js/{{ packageName }}";
+
+    // or
+
+    const { ContractName } = require("@solidity-js/{{ packageName }}");
+
+Then use with ethers.js:
+
+    new ethers.Contract(ContractName.address, ContractName.abi)
+
+Or web3.js:
+
+    new web3.eth.Contract(ContractName.abi, ContractName.address)
+
+
+## Available contracts
+
+| Name | Address |
+| ---- | ------- |
+{{#contracts}}| `{{ contractName }}` | [{{ address }}](https://etherscan.com/address/{{ address }}) |{{/contracts}}

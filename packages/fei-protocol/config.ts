@@ -1,6 +1,8 @@
 import { PackageConfig } from "../../src/types";
 
 const config: PackageConfig = {
+  projectName: "Fei Protocol",
+  projectUrl: "https://fei.money/",
   contracts: {
     Core: {
       address: "0x8d5ED43dCa8C2F7dFB20CF7b53CC7E593635d7b9",

@@ -70,6 +70,18 @@ export const compile = async (
   }
 
   compileTemplate(packageName, "package.json", { packageName, packageVersion });
+
+  if (settings.verbose) {
+    console.log(`Writing ${packageName}/README.md`);
+  }
+
+  compileTemplate(packageName, "README.md", {
+    contracts,
+    packageName,
+    packageVersion,
+    projectName: config.projectName,
+    projectUrl: config.projectUrl,
+  });
 };
 
 export default async function compilePackage(

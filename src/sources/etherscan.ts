@@ -14,6 +14,11 @@ export default async function etherscan(address: string, settings: Settings) {
   });
 
   if (data.message !== "OK") {
+    if (data.result === "Contract source code not verified") {
+      console.warn(`Contract source code not verified on etherscan.`);
+      return {};
+    }
+
     throw new Error(`Etherscan error: ${JSON.stringify(data)}`);
   }
 

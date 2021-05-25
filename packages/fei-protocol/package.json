@@ -10,5 +10,9 @@
     "abi",
     "smart contract",
     "fei-protocol"
+  ],
+  "files": [
+    "index.js",
+    "README.md"
   ]
 }

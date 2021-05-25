@@ -5,7 +5,7 @@
 
 module.exports = {
   Core: {
-    address: 0x8d5ed43dca8c2f7dfb20cf7b53cc7e593635d7b9,
+    address: "0x8d5ED43dCa8C2F7dFB20CF7b53CC7E593635d7b9",
     abi: [
       {
         anonymous: false,
@@ -486,7 +486,7 @@ module.exports = {
     ],
   },
   Tribe: {
-    address: 0xc7283b66eb1eb5fb86327f08e1b5816b0720212b,
+    address: "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B",
     abi: [
       {
         inputs: [
@@ -828,7 +828,7 @@ module.exports = {
     ],
   },
   FeiDAO: {
-    address: 0xe087f94c3081e1832dc7a22b48c6f2b5faae579b,
+    address: "0xE087F94c3081e1832dC7a22B48c6f2b5fAaE579B",
     abi: [
       {
         inputs: [
@@ -1255,7 +1255,7 @@ module.exports = {
     ],
   },
   FeiDAOTimelock: {
-    address: 0x639572471f2f318464dc01066a56867130e45e25,
+    address: "0x639572471f2f318464dc01066a56867130e45E25",
     abi: [
       {
         inputs: [
@@ -1548,7 +1548,7 @@ module.exports = {
     ],
   },
   Fei: {
-    address: 0x956f47f50a910163d8bf957cf5846d573e7f87ca,
+    address: "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
     abi: [
       {
         inputs: [{ internalType: "address", name: "core", type: "address" }],
@@ -1959,7 +1959,7 @@ module.exports = {
     ],
   },
   UniswapIncentive: {
-    address: 0xfe5b6c2a87a976dce20130c423c679f4d6044cd7,
+    address: "0xfe5b6c2a87A976dCe20130c423C679f4d6044cD7",
     abi: [
       {
         inputs: [
@@ -2513,7 +2513,7 @@ module.exports = {
     ],
   },
   EthBondingCurve: {
-    address: 0xe1578b4a32eaefcd563a9e6d0dc02a4213f673b7,
+    address: "0xe1578B4a32Eaefcd563a9E6d0dc02a4213f673B7",
     abi: [
       {
         inputs: [
@@ -3074,7 +3074,7 @@ module.exports = {
     ],
   },
   EthUniswapPCVDeposit: {
-    address: 0x5d6446880fcd004c851ea8920a628c70ca101117,
+    address: "0x5d6446880fcd004c851ea8920a628c70ca101117",
     abi: [
       {
         inputs: [
@@ -3496,7 +3496,7 @@ module.exports = {
     ],
   },
   EthUniswapPCVController: {
-    address: 0x0760dfe09bd6d04d0df9a60c51f01ecedceb5132,
+    address: "0x0760dfe09bd6d04d0df9a60c51f01ecedceb5132",
     abi: [
       {
         inputs: [
@@ -4062,7 +4062,7 @@ module.exports = {
     ],
   },
   UniswapOracle: {
-    address: 0x087f35bd241e41fc28e43f0e8c58d283dd55bd65,
+    address: "0x087F35bd241e41Fc28E43f0E8C58d283DD55bD65",
     abi: [
       {
         inputs: [
@@ -4283,7 +4283,7 @@ module.exports = {
     ],
   },
   BondingCurveOracle: {
-    address: 0x89714d3ac9149426219a3568543200d1964101c4,
+    address: "0x89714d3AC9149426219a3568543200D1964101C4",
     abi: [
       {
         inputs: [
@@ -4566,7 +4566,7 @@ module.exports = {
     ],
   },
   FeiRewardsDistributor: {
-    address: 0xef1a94af192a88859eaf3f3d8c1b9705542174c5,
+    address: "0xEf1a94AF192A88859EAF3F3D8C1B9705542174C5",
     abi: [
       {
         inputs: [
@@ -4978,7 +4978,7 @@ module.exports = {
     ],
   },
   FeiStakingRewards: {
-    address: 0x18305daae09ea2f4d51faa33318be5978d251abd,
+    address: "0x18305DaAe09Ea2F4D51fAa33318be5978D251aBd",
     abi: [
       {
         inputs: [
@@ -5250,7 +5250,7 @@ module.exports = {
     ],
   },
   GenesisGroup: {
-    address: 0xbffb152b9392e38cddc275d818a3db7fe364596b,
+    address: "0xBFfB152b9392e38CdDc275D818a3Db7FE364596b",
     abi: [
       {
         inputs: [
@@ -5783,7 +5783,7 @@ module.exports = {
     ],
   },
   FeiRouter: {
-    address: 0x9271d303b57c204636c38df0ed339b18bf98f909,
+    address: "0x9271D303b57c204636C38Df0eD339b18Bf98f909",
     abi: [
       {
         inputs: [
@@ -5848,7 +5848,7 @@ module.exports = {
     ],
   },
   EthReserveStabilizer: {
-    address: 0xa08a721dfb595753fff335636674d76c455b275c,
+    address: "0xa08A721dFB595753FFf335636674D76C455B275C",
     abi: [
       {
         inputs: [
@@ -6170,7 +6170,7 @@ module.exports = {
     ],
   },
   EthPCVDripper: {
-    address: 0xda079a280fc3e33eb11a78708b369d5ca2da54fe,
+    address: "0xDa079A280FC3e33Eb11A78708B369D5Ca2da54fE",
     abi: [
       {
         inputs: [
@@ -6432,7 +6432,7 @@ module.exports = {
     ],
   },
   RatioPCVController: {
-    address: 0xfc1ad6eb84351597cd3b9b65179633697d65b920,
+    address: "0xfC1aD6eb84351597cD3b9B65179633697d65B920",
     abi: [
       {
         inputs: [{ internalType: "address", name: "_core", type: "address" }],
@@ -6595,7 +6595,7 @@ module.exports = {
     ],
   },
   EthPCVDepositAdapter: {
-    address: 0xb72dded4fa321e093e2083b596404a56ffc5b574,
+    address: "0xB72dDeD4Fa321e093E2083B596404A56ffC5b574",
     abi: [
       {
         inputs: [{ internalType: "address", name: "_target", type: "address" }],

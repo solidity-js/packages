@@ -7,7 +7,7 @@ export type PackageName =
 
 export type EthereumAddress = string;
 
-export type EthereumABI = Record<any, any>; // TODO
+export type EthereumABI = Array<Record<any, any>>; // TODO
 
 export type PackageABISource = "etherscan" | PackageABIGetter;
 

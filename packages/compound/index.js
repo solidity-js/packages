@@ -13079,7 +13079,7 @@ module.exports = {
   },
   Poster: {
     address: "0x3c6809319201b978d821190ba03fa19a3523bd96",
-    abi: {},
+    abi: [],
   },
   Unitroller: {
     address: "0x3d9819210A31b4961b30EF54bE2aeD79B9c9Cd3B",
@@ -28805,7 +28805,7 @@ module.exports = {
   },
   Base200bps_Slope2000bps_Jump8000bps_Kink90: {
     address: "0x40C0C2c565335fa9C4235aC8E1CbFE2c97BAC13A",
-    abi: {},
+    abi: [],
   },
   WBTC: {
     address: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
@@ -36260,7 +36260,7 @@ module.exports = {
   },
   PriceFeedPoster: {
     address: "0x83563ba7f1b093aae57fe876f8d870f8a1508886",
-    abi: {},
+    abi: [],
   },
   CrowdProposalFactory: {
     address: "0x54a06047087927D9B0fb21c1cf0ebd792764dDB8",

@@ -4292,6 +4292,6 @@ module.exports = {
   },
   CurveLP: {
     address: "0x43b4FdFD4Ff969587185cDB6f0BD875c5Fc83f8c",
-    abi: {},
+    abi: [],
   },
 };

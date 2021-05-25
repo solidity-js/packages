@@ -1,10 +1,5 @@
 import axios from "axios";
-import {
-  EthereumABI,
-  EthereumAddress,
-  PackageConfig,
-  Settings,
-} from "../../src/types";
+import { EthereumAddress, PackageConfig, Settings } from "../../src/types";
 
 const NEXUS_MUTUAL_API_URL =
   "https://api.nexusmutual.io/version-data/data.json";
@@ -21,7 +16,7 @@ const nexusMutualGetter = (abi: NexusMutualApiABI) => {
   const getter = async (_address: EthereumAddress, _settings: Settings) =>
     JSON.parse(abi.contractAbi);
 
-  getter.toString = () => `api.nexusmutual.io`;
+  getter.toString = () => "api.nexusmutual.io";
 
   return getter;
 };

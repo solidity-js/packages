@@ -8,7 +8,7 @@ Each package then gets published on NPM:
 
 This makes it easy to load contract ABIs for usage in JavaScript apps:
 
-    import { EthBondingCurve } from "@solidity-js/fei-protocol";
+    import { Core } from "@solidity-js/fei-protocol";
 
     const contract = new ethers.Contract(Core.address, Core.abi, provider);
 

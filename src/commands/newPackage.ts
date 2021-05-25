@@ -43,8 +43,8 @@ export default async function newPackage(
     typesPath,
     prettier.format(
       typesSrc.replace(
-        "export type PackageName = ",
-        `export type PackageName = | "${normalisedPackageName}"`
+        "export type PackageName =",
+        `export type PackageName = | "${normalisedPackageName}" `
       ),
       { filepath: "types.ts" }
     )

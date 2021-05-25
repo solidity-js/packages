@@ -1,4 +1,5 @@
 export type PackageName =
+  | "alchemix"
   | "nexus-mutual"
   | "sablier"
   | "compound"
@@ -37,7 +38,7 @@ export type TemplateName = "index.js" | "package.json" | "README.md";
 export type Settings = {
   verbose: boolean;
   sourcesEnabled: {
-    [k in PackageABISource]: boolean;
+    [k in Exclude<PackageABISource, PackageABIGetter>]: boolean;
   };
   etherscan: {
     apiKey: string;

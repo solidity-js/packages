@@ -4,7 +4,8 @@
   },
   "scripts": {
     "build": "ts-node ./src/main.ts build",
-    "build-all": "ts-node ./src/main.ts build-all"
+    "build-all": "ts-node ./src/main.ts build-all",
+    "new-package": "ts-node ./src/main.ts new-package"
   },
   "devDependencies": {
     "@types/mustache": "^4.1.1",

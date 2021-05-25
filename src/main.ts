@@ -3,6 +3,7 @@ require("dotenv").config();
 import process from "process";
 import build from "./commands/build";
 import buildAll from "./commands/buildAll";
+import newPackage from "./commands/newPackage";
 import { PackageName, Settings } from "./types";
 
 // Main
@@ -18,6 +19,7 @@ const settings: Settings = {
 const commands = {
   build: build,
   "build-all": buildAll,
+  "new-package": newPackage,
 };
 
 async function main() {
@@ -39,6 +41,8 @@ async function main() {
     commands["build"]((process.argv[3] || "") as PackageName, settings);
   } else if (command === "build-all") {
     commands["build-all"](settings);
+  } else if (command === "new-package") {
+    commands["new-package"](process.argv[3] || "", settings);
   }
 }
 

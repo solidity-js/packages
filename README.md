@@ -23,5 +23,6 @@ This makes it easy to load contract ABIs for usage in JavaScript apps:
   - Post-install message to warn users?
   - File hashes?
   - An on-chain smart contract address registry?
+  - Periodic GH Actions checks
 - [ ] Testnets
 - [ ] Better CLI output, colours etc

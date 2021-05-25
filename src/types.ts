@@ -44,3 +44,5 @@ export type Settings = {
     apiKey: string;
   };
 };
+
+export type CliToggle = "quiet" | "no-version-bump";

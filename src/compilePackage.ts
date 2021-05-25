@@ -12,7 +12,11 @@ import {
 } from "./types";
 import etherscan from "./sources/etherscan";
 import { compile as compileTemplate } from "./template";
-import { bumpVersionNumberFromPackageJson } from "./helpers";
+import {
+  bumpVersionNumberFromPackageJson,
+  cliHasToggle,
+  readVersionNumberFromPackageJson,
+} from "./helpers";
 
 const sources: Record<
   Exclude<PackageABISource, PackageABIGetter>,
@@ -77,11 +81,18 @@ export const compile = async (
     console.log(`Writing ${packageName}/package.json`);
   }
 
+  const packageJsonPath = path.join(
+    paths.packages,
+    packageName,
+    "package.json"
+  );
+
   let packageVersion = "0.0.1";
-  if (fs.existsSync(path.join(paths.packages, packageName, "package.json"))) {
-    packageVersion = bumpVersionNumberFromPackageJson(
-      path.join(paths.packages, packageName, "package.json")
-    );
+  if (fs.existsSync(packageJsonPath)) {
+    packageVersion = readVersionNumberFromPackageJson(packageJsonPath);
+  }
+  if (!cliHasToggle("no-version-bump")) {
+    packageVersion = bumpVersionNumberFromPackageJson(packageJsonPath);
   }
 
   compileTemplate(packageName, "package.json", { packageName, packageVersion });

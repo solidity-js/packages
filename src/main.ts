@@ -4,6 +4,7 @@ import process from "process";
 import build from "./commands/build";
 import buildAll from "./commands/buildAll";
 import newPackage from "./commands/newPackage";
+import { cliHasToggle } from "./helpers";
 import { PackageName, Settings } from "./types";
 
 // Main
@@ -30,6 +31,10 @@ async function main() {
   } else {
     settings.sourcesEnabled.etherscan = true;
     settings.etherscan.apiKey = process.env.ETHERSCAN_API_KEY;
+  }
+
+  if (cliHasToggle("quiet")) {
+    settings.verbose = false;
   }
 
   const command = process.argv[2];

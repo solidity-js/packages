@@ -62,8 +62,13 @@ const config: PackageConfig = {
   projectName: "",
   projectUrl: "",
   contracts: {
-    Contract: ""
+    Contract: {
+      address: "",
+      source: "etherscan"
+    }
   }
 };
+
+export default config;
 
 `;

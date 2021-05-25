@@ -1,4 +1,4 @@
-export type PackageName = "fei-protocol";
+export type PackageName = "sablier" | "compound" | "fei-protocol";
 
 export type EthereumAddress = string;
 

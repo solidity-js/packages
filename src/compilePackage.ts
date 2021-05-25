@@ -22,6 +22,10 @@ export const compile = async (
   config: PackageConfig,
   settings: Settings
 ) => {
+  if (settings.verbose) {
+    console.log(`Building ${packageName}`);
+  }
+
   const contracts: Contract[] = [];
   for (const contractName in config.contracts) {
     const source: PackageABISource = config.contracts[contractName].source;

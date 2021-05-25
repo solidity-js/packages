@@ -3,7 +3,8 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "build": "ts-node ./src/build.ts"
+    "build": "ts-node ./src/main.ts build",
+    "build-all": "ts-node ./src/main.ts build-all"
   },
   "devDependencies": {
     "@types/mustache": "^4.1.1",

@@ -38,6 +38,10 @@ export const compile = async (
 
     const address = config.contracts[contractName].address;
 
+    if (settings.verbose) {
+      console.log(`Fetch ${contractName} at ${address} from ${source}`);
+    }
+
     const abi = await getter(address, settings);
 
     const contract = {
@@ -51,7 +55,16 @@ export const compile = async (
 
   const packageVersion = "1.0.0"; // TODO
 
+  if (settings.verbose) {
+    console.log(`Writing ${packageName}/index.js`);
+  }
+
   compileTemplate(packageName, "index.js", { contracts });
+
+  if (settings.verbose) {
+    console.log(`Writing ${packageName}/package.json`);
+  }
+
   compileTemplate(packageName, "package.json", { packageName, packageVersion });
 };
 

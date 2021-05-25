@@ -29,6 +29,7 @@ export type Contract = {
 export type TemplateName = "index.js" | "package.json";
 
 export type Settings = {
+  verbose: boolean;
   sourcesEnabled: {
     [k in PackageABISource]: boolean;
   };

@@ -1,18 +1,23 @@
 require("dotenv").config();
 
-import fs from "fs";
 import process from "process";
-import compilePackage from "./compilePackage";
+import build from "./commands/build";
+import buildAll from "./commands/buildAll";
 import { PackageName, Settings } from "./types";
-import paths from "./paths";
 
 // Main
 
 const settings: Settings = {
+  verbose: true,
   sourcesEnabled: {
     etherscan: false,
   },
   etherscan: { apiKey: "" },
+};
+
+const commands = {
+  build: build,
+  "build-all": buildAll,
 };
 
 async function main() {
@@ -25,14 +30,18 @@ async function main() {
     settings.etherscan.apiKey = process.env.ETHERSCAN_API_KEY;
   }
 
-  const packages = fs.readdirSync(paths.packages);
-  const promises = packages.map((value) =>
-    compilePackage(value as PackageName, settings)
-  );
+  const command = process.argv[2];
+  if (!Object.keys(commands).includes(command)) {
+    throw new Error(`Unknown command ${command}.`);
+  }
 
-  await Promise.all(promises);
+  if (command === "build") {
+    commands["build"]((process.argv[3] || "") as PackageName, settings);
+  } else if (command === "build-all") {
+    commands["build-all"](settings);
+  }
 }
 
 main()
-  .then(() => console.log("Compilation complete."))
+  .then(() => {})
   .catch((e) => console.error(e));

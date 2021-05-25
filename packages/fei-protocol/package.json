@@ -1,0 +1,13 @@
+{
+  "name": "@solidity-js/fei-protocol",
+  "description": "Smart contract ABIs for fei-protocol contracts",
+  "version": "1.0.0",
+  "author": "SolidityJS <https://github.com/solidity-js>",
+  "license": "MIT",
+  "keywords": [
+    "solidity",
+    "abi",
+    "smart contract",
+    "fei-protocol"
+  ]
+}

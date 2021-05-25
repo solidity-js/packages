@@ -8,17 +8,22 @@ import {
   PackageABIGetter,
   PackageConfig,
   PackageName,
+  Contract,
 } from "./types";
 import etherscan from "./sources/etherscan";
+import { compile as compileTemplate } from "./template";
 
 const sources: Record<PackageABISource, PackageABIGetter> = {
   etherscan,
 };
 
-export const compile = async (config: PackageConfig, settings: Settings) => {
-  const contractNames = Object.keys(config.contracts);
-
-  contractNames.forEach(async (contractName) => {
+export const compile = async (
+  packageName: PackageName,
+  config: PackageConfig,
+  settings: Settings
+) => {
+  const contracts: Contract[] = [];
+  for (const contractName in config.contracts) {
     const source: PackageABISource = config.contracts[contractName].source;
 
     if (!sources[source]) {
@@ -26,13 +31,28 @@ export const compile = async (config: PackageConfig, settings: Settings) => {
     }
 
     if (!settings.sourcesEnabled[source]) {
-      return;
+      continue;
     }
 
     const getter = sources[source];
 
-    const abi = await getter(config.contracts[contractName].address, settings);
-  });
+    const address = config.contracts[contractName].address;
+
+    const abi = await getter(address, settings);
+
+    const contract = {
+      contractName,
+      address,
+      abi: JSON.stringify(abi),
+    };
+
+    contracts.push(contract);
+  }
+
+  const packageVersion = "1.0.0"; // TODO
+
+  compileTemplate(packageName, "contract.js", { contracts });
+  compileTemplate(packageName, "package.json", { packageName, packageVersion });
 };
 
 export default async function compilePackage(
@@ -59,5 +79,5 @@ export default async function compilePackage(
     );
   }
 
-  await compile(config, settings);
+  await compile(packageName, config, settings);
 }

@@ -6,8 +6,11 @@
     "build": "ts-node ./src/build.ts"
   },
   "devDependencies": {
+    "@types/mustache": "^4.1.1",
+    "@types/prettier": "^2.2.3",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
+    "mustache": "^4.2.0",
     "prettier": "^2.3.0",
     "ts-node": "^10.0.0"
   }

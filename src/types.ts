@@ -14,11 +14,19 @@ export type PackageABIGetter = (
 export type PackageConfig = {
   contracts: {
     [k: string]: {
-      address: string;
+      address: EthereumAddress;
       source: PackageABISource;
     };
   };
 };
+
+export type Contract = {
+  contractName: string;
+  address: EthereumAddress;
+  abi: string;
+};
+
+export type TemplateName = "contract.js" | "package.json";
 
 export type Settings = {
   sourcesEnabled: {

@@ -19,12 +19,15 @@ export const parse = (
 export const compile = (
   packageName: PackageName,
   templateName: TemplateName,
-  variables: Record<any, any>
+  variables: Record<any, any>,
+  settings = { prettier: true }
 ) =>
   fs.writeFileSync(
     path.join(__dirname, "../packages", packageName, templateName),
-    prettier.format(
-      parse(templateName, { ...variables, now: new Date().toISOString() }),
-      { filepath: templateName }
-    )
+    settings.prettier
+      ? prettier.format(
+          parse(templateName, { ...variables, now: new Date().toISOString() }),
+          { filepath: templateName }
+        )
+      : parse(templateName, { ...variables, now: new Date().toISOString() })
   );

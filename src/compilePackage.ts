@@ -75,13 +75,18 @@ export const compile = async (
     console.log(`Writing ${packageName}/README.md`);
   }
 
-  compileTemplate(packageName, "README.md", {
-    contracts,
+  compileTemplate(
     packageName,
-    packageVersion,
-    projectName: config.projectName,
-    projectUrl: config.projectUrl,
-  });
+    "README.md",
+    {
+      contracts,
+      packageName,
+      packageVersion,
+      projectName: config.projectName,
+      projectUrl: config.projectUrl,
+    },
+    { prettier: false }
+  );
 };
 
 export default async function compilePackage(

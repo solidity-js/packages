@@ -13,7 +13,10 @@ import {
 import etherscan from "./sources/etherscan";
 import { compile as compileTemplate } from "./template";
 
-const sources: Record<PackageABISource, PackageABIGetter> = {
+const sources: Record<
+  Exclude<PackageABISource, PackageABIGetter>,
+  PackageABIGetter
+> = {
   etherscan,
 };
 
@@ -30,15 +33,18 @@ export const compile = async (
   for (const contractName in config.contracts) {
     const source: PackageABISource = config.contracts[contractName].source;
 
-    if (!sources[source]) {
-      throw new Error(`Unknown ABI source '${source}'.`);
-    }
+    let getter = source;
+    if (typeof source === "string") {
+      if (!sources[source]) {
+        throw new Error(`Unknown ABI source '${source}'.`);
+      }
 
-    if (!settings.sourcesEnabled[source]) {
-      continue;
-    }
+      if (!settings.sourcesEnabled[source]) {
+        continue;
+      }
 
-    const getter = sources[source];
+      getter = sources[source];
+    }
 
     const address = config.contracts[contractName].address;
 
@@ -46,7 +52,7 @@ export const compile = async (
       console.log(`Fetch ${contractName} at ${address} from ${source}`);
     }
 
-    const abi = await getter(address, settings);
+    const abi = await (getter as PackageABIGetter)(address, settings);
 
     const contract = {
       contractName,
@@ -107,11 +113,20 @@ export default async function compilePackage(
 
   const config = require(packageConfigTsPath).default;
 
-  if (!config || !Object.keys(config.contracts || {}).length) {
+  if (
+    !config ||
+    (!Object.keys(config.contracts || {}).length &&
+      typeof config !== "function")
+  ) {
     throw new Error(
-      `Invalid package '${packageName}'. Please ensure there exists a config.ts file with a valid default export and at least one contract.`
+      `Invalid package '${packageName}'. Please ensure there exists a config.ts file with a valid default export.`
     );
   }
 
-  await compile(packageName, config, settings);
+  let processedConfig = config;
+  if (typeof config === "function") {
+    processedConfig = (await config()) as PackageConfig;
+  }
+
+  await compile(packageName, processedConfig, settings);
 }

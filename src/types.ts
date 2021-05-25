@@ -1,10 +1,14 @@
-export type PackageName = "sablier" | "compound" | "fei-protocol";
+export type PackageName =
+  | "nexus-mutual"
+  | "sablier"
+  | "compound"
+  | "fei-protocol";
 
 export type EthereumAddress = string;
 
 export type EthereumABI = Record<any, any>; // TODO
 
-export type PackageABISource = "etherscan";
+export type PackageABISource = "etherscan" | PackageABIGetter;
 
 export type PackageABIGetter = (
   address: EthereumAddress,

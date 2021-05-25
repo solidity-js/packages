@@ -18,3 +18,10 @@ This makes it easy to load contract ABIs for usage in JavaScript apps:
 
 - [ ] How to handle multiple contracts with the same ABI (eg Uniswap token pairs)
 - [ ] Validation processes. How can consumers be sure that the ABIs and addresses are valid?
+  - More links to project websites
+  - [Sourcify](https://github.com/ethereum/sourcify) integration?
+  - Post-install message to warn users?
+  - File hashes?
+  - An on-chain smart contract address registry?
+- [ ] Testnets
+- [ ] Better CLI output, colours etc

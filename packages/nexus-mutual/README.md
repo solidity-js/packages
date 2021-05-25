@@ -6,11 +6,11 @@ Smart contract ABIs for [](), packaged by [SolidityJS](https://github.com/solidi
 
 **Always remember to install a _specific_ package version.**
 
-    $ npm install @solidity-js/nexus-mutual@1.0.0
+    $ npm install @solidity-js/nexus-mutual@0.0.1
 
     // or
 
-    $ yarn add @solidity-js/nexus-mutual@1.0.0
+    $ yarn add @solidity-js/nexus-mutual@0.0.1
 
 Load in JS/TS:
 

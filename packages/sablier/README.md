@@ -6,11 +6,11 @@ Smart contract ABIs for [Sablier](https://sablier.finance/), packaged by [Solidi
 
 **Always remember to install a _specific_ package version.**
 
-    $ npm install @solidity-js/sablier@1.0.0
+    $ npm install @solidity-js/sablier@0.0.1
 
     // or
 
-    $ yarn add @solidity-js/sablier@1.0.0
+    $ yarn add @solidity-js/sablier@0.0.1
 
 Load in JS/TS:
 

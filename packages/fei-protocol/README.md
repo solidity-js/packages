@@ -6,11 +6,11 @@ Smart contract ABIs for [Fei Protocol](https://fei.money/), packaged by [Solidit
 
 **Always remember to install a _specific_ package version.**
 
-    $ npm install @solidity-js/fei-protocol@1.0.0
+    $ npm install @solidity-js/fei-protocol@0.0.1
 
     // or
 
-    $ yarn add @solidity-js/fei-protocol@1.0.0
+    $ yarn add @solidity-js/fei-protocol@0.0.1
 
 Load in JS/TS:
 

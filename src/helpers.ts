@@ -10,3 +10,17 @@ export const manyFrom = async (
   }
   return abis;
 };
+
+export const bumpVersionNumberFromPackageJson = (path: string) => {
+  const existingPackageJson: { version: string } = require(path);
+  const matches = existingPackageJson.version.match(/\.(\d+)$/);
+
+  if (!matches) {
+    return existingPackageJson.version;
+  }
+
+  return existingPackageJson.version.replace(
+    /\.(\d+)$/,
+    `.${Number(matches[1]) + 1}`
+  );
+};

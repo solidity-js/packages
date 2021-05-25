@@ -6,11 +6,11 @@ Smart contract ABIs for [Compound Finance](https://compound.finance/), packaged 
 
 **Always remember to install a _specific_ package version.**
 
-    $ npm install @solidity-js/compound@1.0.0
+    $ npm install @solidity-js/compound@0.0.1
 
     // or
 
-    $ yarn add @solidity-js/compound@1.0.0
+    $ yarn add @solidity-js/compound@0.0.1
 
 Load in JS/TS:
 

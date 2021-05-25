@@ -12,6 +12,7 @@ import {
 } from "./types";
 import etherscan from "./sources/etherscan";
 import { compile as compileTemplate } from "./template";
+import { bumpVersionNumberFromPackageJson } from "./helpers";
 
 const sources: Record<
   Exclude<PackageABISource, PackageABIGetter>,
@@ -28,6 +29,8 @@ export const compile = async (
   if (settings.verbose) {
     console.log(`Building ${packageName}`);
   }
+
+  // index.js
 
   const contracts: Contract[] = [];
   for (const contractName in config.contracts) {
@@ -63,19 +66,27 @@ export const compile = async (
     contracts.push(contract);
   }
 
-  const packageVersion = "1.0.0"; // TODO
-
   if (settings.verbose) {
     console.log(`Writing ${packageName}/index.js`);
   }
-
   compileTemplate(packageName, "index.js", { contracts });
+
+  // package.json
 
   if (settings.verbose) {
     console.log(`Writing ${packageName}/package.json`);
   }
 
+  let packageVersion = "0.0.1";
+  if (fs.existsSync(path.join(paths.packages, packageName, "package.json"))) {
+    packageVersion = bumpVersionNumberFromPackageJson(
+      path.join(paths.packages, packageName, "package.json")
+    );
+  }
+
   compileTemplate(packageName, "package.json", { packageName, packageVersion });
+
+  // README.md
 
   if (settings.verbose) {
     console.log(`Writing ${packageName}/README.md`);

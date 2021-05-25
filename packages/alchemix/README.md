@@ -6,11 +6,11 @@ Smart contract ABIs for [Alchemix](https://alchemix.fi/), packaged by [SolidityJ
 
 **Always remember to install a _specific_ package version.**
 
-    $ npm install @solidity-js/alchemix@1.0.0
+    $ npm install @solidity-js/alchemix@0.0.1
 
     // or
 
-    $ yarn add @solidity-js/alchemix@1.0.0
+    $ yarn add @solidity-js/alchemix@0.0.1
 
 Load in JS/TS:
 

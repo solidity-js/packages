@@ -1,7 +1,7 @@
 {
   "name": "@solidity-js/sablier",
   "description": "Smart contract ABIs for sablier contracts",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "./index.js",
   "author": "SolidityJS <https://github.com/solidity-js>",
   "license": "MIT",
